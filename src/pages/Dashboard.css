@@ -1,0 +1,286 @@
+.dashboard {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.dashboard-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  font-size: 28px;
+  color: var(--accent-primary);
+}
+
+.header-left h1 {
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-email {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.dashboard-main {
+  padding: 32px 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.dashboard-card {
+  min-height: 200px;
+}
+
+.dashboard-card h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location-icon {
+  font-size: 24px;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.location-info p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.map-container {
+  min-height: 400px;
+  margin-bottom: 24px;
+}
+
+.map-container h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.map-container-small {
+  height: 300px;
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.garages-list,
+.requests-list {
+  margin-top: 24px;
+}
+
+.garages-list h2,
+.requests-list h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.garages-grid,
+.requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.garage-card,
+.request-card {
+  background: var(--bg-tertiary);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.garage-card:hover,
+.request-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.garage-card h3,
+.request-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.garage-distance,
+.request-time,
+.request-location {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.garage-rating {
+  color: var(--accent-warning);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.garage-card .btn,
+.request-card .btn {
+  width: 100%;
+}
+
+.active-request-card {
+  grid-column: 1 / -1;
+}
+
+.active-request-card h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.request-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request-info p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.request-info strong {
+  color: var(--text-primary);
+}
+
+.status-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-controls p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.request-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.request-actions .btn {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .garages-grid,
+  .requests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-container {
+    min-height: 300px;
+  }
+  
+  .status-buttons,
+  .request-actions {
+    flex-direction: column;
+  }
+  
+  .status-buttons .btn,
+  .request-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-main {
+    padding: 20px 0;
+  }
+  
+  .dashboard-card,
+  .garage-card,
+  .request-card {
+    padding: 16px;
+  }
+  
+  .user-email {
+    display: none;
+  }
+}
+
+
